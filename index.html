@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Dashboard Covid-19
+    </title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script> -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <h3>COVID-19</h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#indonesia">Indonesia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#global">Global</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="header-bg position-fixed col-12 d-none d-sm-block">
+        <img src="assets/img/header-background.jpg" class="img-fluid" alt="Responsive image" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mt-5">
+                <h3>Jumlah Kasus Covid-19 DI Indonesia</h3>
+                <div class="card-deck" id="indonesia">
+                    <!-- <div class="card"> -->
+
+                    <div class="card bg-danger mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="indonesia-total-positif"></h2>
+                        </div>
+                    </div>
+                    <div class="card bg-success mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="indonesia-total-sembuh"></h2>
+                        </div>
+                    </div>
+                    <div class="card bg-warning mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="indonesia-total-meninggal"></h2>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Data Kasus Covid-19 di Indonesia</h3>
+                <div class="panel panel-default">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-hover table-striped table-light" id="list-covid">
+                            <thead>
+                                <tr class="table-info">
+                                    <th>Provinsi</th>
+                                    <th class="text-center">Positif</th>
+                                    <th class="text-center">Sembuh</th>
+                                    <th class="text-center">Meninggal</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-sm-12">
+                <h3>Jumlah Kasus Covid-19 Global</h3>
+                <div class="card-deck" id="global">
+                    <div class="card bg-danger mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="global-positif"></h2>
+                        </div>
+                    </div>
+                    <div class="card bg-success mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="global-sembuh"></h2>
+                        </div>
+                    </div>
+                    <div class="card bg-warning mb-5">
+                        <div class="card-body">
+                            <h2 class="mb-0 number-font" id="global-meninggal"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <h3>Data Kasus Covid-19 Global</h3>
+                <div class="panel panel-default">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-bordered table-hover table-striped table-light" id="global-covid">
+                            <thead>
+                                <tr class="table-info">
+                                    <th>Negara</th>
+                                    <th class="text-center">Positif</th>
+                                    <th class="text-center">Sembuh</th>
+                                    <th class="text-center">Meninggal</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="introModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Jumlah Kasus Covid-19 di Indonesia
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="alert alert-info">
+                                <div class="text-primary">
+                                    <p class="text-primary mb-0">TOTAL POSITIF</p>
+                                    <img src="assets/img/sad.png" class="float-right" width="50" height="50" />
+                                    <h2 class="mb-0 number-font" id="kasus"></h2>
+                                    <p class="text-primary mb-0">Orang</p>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning">
+                                <div class="text-warning">
+                                    <p class="text-warning mb-0">TOTAL DALAM PERAWATAN</p>
+                                    <img src="assets/img/sick.png" class="float-right" width="50" height="50" />
+                                    <h2 class="mb-0 number-font" id="perawatan"></h2>
+                                    <p class="text-warning mb-0">Orang</p>
+                                </div>
+                            </div>
+                            <div class="alert alert-success">
+                                <div class="text-success">
+                                    <p class="text-success mb-0">TOTAL SEMBUH</p>
+                                    <img src="assets/img/happy.png" class="float-right" width="50" height="50" />
+                                    <h2 class="mb-0 number-font" id="sembuh"></h2>
+                                    <p class="text-success mb-0">Orang</p>
+                                </div>
+                            </div>
+                            <div class="alert alert-danger">
+                                <div class="text-danger">
+                                    <p class="text-danger mb-0">TOTAL MENINGGAL</p>
+                                    <img src="assets/img/emoji.png" class="float-right" width="50" height="50" />
+                                    <h2 class="mb-0 number-font" id="meninggal"></h2>
+                                    <p class="text-danger mb-0">Orang</p>
+                                </div>
+                            </div>
+                            <div class="col alert alert-info">
+                                <p class="col text-center">
+                                    Sumber : Kawal Covid-19.<br />Update :
+                                    <span id="date"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
