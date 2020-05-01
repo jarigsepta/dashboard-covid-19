@@ -107,3 +107,10 @@ function tampilkanCovid() {
     });
 }
 tampilkanCovid();
+
+var covid = document.getElementById('covid');
+var typewriter = new Typewriter(covid, {
+    strings: ['COVID-19'],
+    autoStart: true,
+    loop: true,
+});
